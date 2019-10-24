@@ -5,16 +5,32 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>My CRUD in NodeJS</title>
 </head>
-<body>
-
+<body class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/show">ROSCA-SYSTEM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Novo <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <h2>Editar Registro</h2>
   <% data.forEach(function(details) { %>
     <form action="/edit/<%= details._id %>" method="POST">
-      <input type="text" value="<%= details.name %>" name="name">
-      <input type="text" value="<%= details.surname %>" name="surname">
-      <br />
-      <button><a href="/show">Todos</a></button>
-      <button type="submit">Editar</button>
+      <div class="form-group">
+        <input class="form-control" type="text" value="<%= details.name %>" name="name">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" value="<%= details.surname %>" name="surname">
+      </div>
+      
+      <button class="btn btn-success btn-sm" type="submit">Editar</button>
     </form>
   <% }) %>
 

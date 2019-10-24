@@ -7,13 +7,28 @@
 </head>
 <body class="container">
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/show">ROSCA-SYSTEM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Novo <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
 <h2>Registros</h2>
   <table class="table">
     <thead>
         <tr>
-            <td>Nome</td>
-            <td>Sobrenome</td>
-            <td>Ação</td>
+            <th>Nome</td>
+            <th>Sobrenome</td>
+            <th>Ação</td>
         </tr>
     </thead>
     <tbody>
@@ -21,11 +36,10 @@
         <tr>
             <td><%= details.name %></td>
             <td><%= details.surname %></td>
-            <td><a class="btn btn-primary btn-sm" href="/edit/<%= details._id %>">Editar</a> - <a class="btn btn-danger btn-sm" href="/delete/<%= details._id %>">Deletar</a></td>
+            <td><a class="btn btn-primary btn-sm" href="/edit/<%= details._id %>">Editar</a> <a class="btn btn-danger btn-sm" href="/delete/<%= details._id %>">Deletar</a></td>
         </tr> 
         <% }) %>
     </tbody>
   </table>
-  <button><a href="/">Novo</a></button>
 </body>
 </html>
